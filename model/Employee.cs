@@ -17,12 +17,15 @@ public record Employee
     public string? Position { get; set; }
     public DateTime HiredAt { get; set; }
     public DateTime? TerminatedAt { get; set; }
-    public string HrStatus { get { return GetHrStatus(InTraining, TerminatedAt); } }
-    public string CompanyEmail { get { return GetCompanyEmail(FirstName, LastName); } }
+
+    private string? hrStatus;
+    public string HrStatus { get { return hrStatus ?? GetHrStatus(InTraining, TerminatedAt); } set { hrStatus = value; } }
+    private string? companyEmail;
+    public string CompanyEmail { get { return companyEmail ?? GetCompanyEmail(FirstName, LastName); } set { companyEmail = value; } }
 
     private static string GetCompanyEmail(string firstName, string lastName)
     {
-        return firstName.First() + "." + lastName.First() + Consts.COMPANY_EMAIL_DOMAIN;
+        return firstName.First() + "." + lastName + Consts.COMPANY_EMAIL_DOMAIN;
     }
 
     private static string GetHrStatus(bool inTraining, DateTime? terminatedAt)

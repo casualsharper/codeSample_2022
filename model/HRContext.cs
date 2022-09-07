@@ -1,6 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 
-class HrDbContext : DbContext
+class EmployeeContext : DbContext
 {
     public DbSet<Employee> Employees { get; set; } = default!;
+
+    public string DbPath { get; } = System.IO.Path.Join(Utils.ExecutableBaseFolder, "employee.db");
+
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+        => options.UseSqlite($"Data Source={DbPath}");
 }
