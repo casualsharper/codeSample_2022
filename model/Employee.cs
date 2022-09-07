@@ -9,7 +9,7 @@ public record Employee
     public string FirstName { get; set; } = default!;
     public string LastName { get; set; } = default!;
     public string? Phone { get; set; }
-    public string? Email { get; set; }
+    public string Email { get; set; } = default!;
     public string? Country { get; set; }
     [Name("EmployeeID")]
     public int EmployeeId { get; set; }
@@ -23,8 +23,10 @@ public record Employee
     public DateTime? TerminatedAt { get; set; }
 
     private string? hrStatus;
+    [Ignore]
     public string HrStatus { get { return hrStatus ?? GetHrStatus(InTraining, TerminatedAt); } set { hrStatus = value; } }
     private string? companyEmail;
+    [Ignore]
     public string CompanyEmail { get { return companyEmail ?? GetCompanyEmail(FirstName, LastName); } set { companyEmail = value; } }
 
     private static string GetCompanyEmail(string firstName, string lastName)
