@@ -23,9 +23,9 @@ class Program
 
     private static void InsertData(IEnumerable<Employee> data, EmployeeContextOperator employeeContextOperator)
     {
-        employeeContextOperator.AddEmployeesAsync(data).GetAwaiter();
+        var newEntries = employeeContextOperator.AddEmployees(data);
 
-        Console.WriteLine($"Employees added: {data.Count()}");
+        Console.WriteLine($"Employees added: {newEntries}");
     }
 
     private static void SearchRoutine(EmployeeContextOperator employeeContextOperator)

@@ -16,10 +16,14 @@ public class EmployeeContextOperator : IDisposable
         employeeContext = new EmployeeContext();
     }
 
-    public async Task AddEmployeesAsync(IEnumerable<Employee> employees)
+    public int AddEmployees(IEnumerable<Employee> employees)
     {
-        await employeeContext.AddRangeAsync(employees);
-        await employeeContext.SaveChangesAsync();
+        var sanitizedData = SanitizeData(employees);
+
+        employeeContext.AddRange(sanitizedData);
+        employeeContext.SaveChanges();
+
+        return sanitizedData.Count;
     }
 
     public IEnumerable<Employee> SearchEmployee(string searchString)
@@ -30,6 +34,12 @@ public class EmployeeContextOperator : IDisposable
         w.FirstName.Contains(searchString) ||
         w.LastName.Contains(searchString)
         ).ToList();
+    }
+
+    public void Dispose()
+    {
+        Dispose(disposing: true);
+        GC.SuppressFinalize(this);
     }
 
     protected virtual void Dispose(bool disposing)
@@ -45,9 +55,11 @@ public class EmployeeContextOperator : IDisposable
         }
     }
 
-    public void Dispose()
+    private List<Employee> SanitizeData(IEnumerable<Employee> employees)
     {
-        Dispose(disposing: true);
-        GC.SuppressFinalize(this);
+        return employees
+        .GroupBy(g => g.EmployeeId)
+        .Select(s => s.First())
+        .ToList();
     }
 }

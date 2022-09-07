@@ -4,7 +4,7 @@ using CsvHelper.Configuration.Attributes;
 
 namespace EvolutionTask.Model;
 
-public record Employee
+public class Employee
 {
     public string FirstName { get; set; } = default!;
     public string LastName { get; set; } = default!;

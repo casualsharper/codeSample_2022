@@ -10,5 +10,6 @@ class EmployeeContext : DbContext
     public string DbPath { get; } = Path.Join(Utils.ExecutableBaseFolder, Consts.DB_NAME);
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlite($"Data Source={DbPath}");
+        => options.EnableSensitiveDataLogging()
+            .UseSqlite($"Data Source={DbPath}");
 }
