@@ -9,6 +9,10 @@ class EmployeeContext : DbContext
 
     public string DbPath { get; } = Path.Join(Utils.ExecutableBaseFolder, Consts.DB_NAME);
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+        => modelBuilder.Entity<Employee>()
+            .UsePropertyAccessMode(PropertyAccessMode.Property);
+
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.EnableSensitiveDataLogging()
             .UseSqlite($"Data Source={DbPath}");
