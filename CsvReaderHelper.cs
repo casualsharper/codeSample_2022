@@ -1,6 +1,12 @@
 using System.Globalization;
+using System.Collections.Generic;
 using CsvHelper;
 using CsvHelper.Configuration;
+using System.IO;
+using System.Linq;
+using EvolutionTask.Model;
+
+namespace EvolutionTask;
 
 public static class CsvReaderHelper
 {

@@ -1,4 +1,8 @@
+using System;
+using System.Linq;
 using CsvHelper.Configuration.Attributes;
+
+namespace EvolutionTask.Model;
 
 public record Employee
 {

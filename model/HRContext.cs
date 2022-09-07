@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using System.IO;
+
+namespace EvolutionTask.Model;
 
 class EmployeeContext : DbContext
 {

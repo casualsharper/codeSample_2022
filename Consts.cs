@@ -1,3 +1,5 @@
+namespace EvolutionTask;
+
 public static class Consts
 {
     public const string COMPANY_EMAIL_DOMAIN = "@ibsat.com";

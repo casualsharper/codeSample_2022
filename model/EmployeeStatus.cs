@@ -1,3 +1,5 @@
+namespace EvolutionTask.Model;
+
 enum EmployeeStatus
 {
     Active,
