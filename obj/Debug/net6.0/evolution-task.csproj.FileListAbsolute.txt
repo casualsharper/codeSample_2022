@@ -13,3 +13,16 @@ C:\Users\Alex\repositories\evolution-task\obj\Debug\net6.0\refint\evolution-task
 C:\Users\Alex\repositories\evolution-task\obj\Debug\net6.0\evolution-task.pdb
 C:\Users\Alex\repositories\evolution-task\obj\Debug\net6.0\evolution-task.genruntimeconfig.cache
 C:\Users\Alex\repositories\evolution-task\obj\Debug\net6.0\ref\evolution-task.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\EmployeeDataTest.csv
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\CsvHelper.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Alex\repositories\evolution-task\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Alex\repositories\evolution-task\obj\Debug\net6.0\evolution-task.csproj.CopyComplete

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj": {}
+    "C:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj": {
+    "C:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj",
+        "projectUniqueName": "C:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj",
         "projectName": "evolution-task",
-        "projectPath": "c:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj",
+        "projectPath": "C:\\Users\\Alex\\repositories\\evolution-task\\evolution-task.csproj",
         "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Alex\\repositories\\evolution-task\\obj\\",
+        "outputPath": "C:\\Users\\Alex\\repositories\\evolution-task\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config"
