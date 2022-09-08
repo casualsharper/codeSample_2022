@@ -18,7 +18,7 @@ namespace evolution_task.Migrations
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
                     Phone = table.Column<string>(type: "TEXT", nullable: true),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
                     Country = table.Column<string>(type: "TEXT", nullable: true),
                     InTraining = table.Column<bool>(type: "INTEGER", nullable: false),
                     Department = table.Column<string>(type: "TEXT", nullable: true),

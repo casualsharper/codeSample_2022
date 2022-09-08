@@ -34,10 +34,10 @@ public class EmployeeContextOperator : IDisposable
     {
         return employeeContext.Employees
             .Where(w =>
-                w.CompanyEmail.Contains(searchString) ||
-                w.Email.Contains(searchString) ||
-                w.FirstName.Contains(searchString) ||
-                w.LastName.Contains(searchString))
+                EF.Functions.Like(w.CompanyEmail, $"%{searchString}%") ||
+                EF.Functions.Like(w.Email, $"%{searchString}%") ||
+                EF.Functions.Like(w.FirstName, $"%{searchString}%") ||
+                EF.Functions.Like(w.LastName, $"%{searchString}%"))
             .ToList();
     }
 
