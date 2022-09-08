@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace evolution_task.Migrations
+namespace EvolutionTask.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
     [Migration("20220908113148_InitialCreate")]
