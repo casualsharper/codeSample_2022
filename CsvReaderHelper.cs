@@ -15,7 +15,7 @@ public static class CsvReaderHelper
         Delimiter = ";"
     };
 
-    public static IEnumerable<Employee> ReadEmployeeFile(string filePath)
+    public static IEnumerable<Employee> ReadEmployeesFile(string filePath)
     {
         using (var reader = new StreamReader(filePath))
         using (var csv = new CsvReader(reader, csvConfig))

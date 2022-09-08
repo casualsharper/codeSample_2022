@@ -12,7 +12,7 @@ class Program
     {
         var sampleFilePath = Path.Combine(Utils.ExecutableBaseFolder, Consts.SAMPLE_FILE_NAME);
 
-        var data = CsvReaderHelper.ReadEmployeeFile(sampleFilePath);
+        var data = CsvReaderHelper.ReadEmployeesFile(sampleFilePath);
 
         using var employeeContextOperator = new EmployeeContextOperator();
 
