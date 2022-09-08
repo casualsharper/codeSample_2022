@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using EvolutionTask.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace EvolutionTask;
 
@@ -14,6 +15,7 @@ public class EmployeeContextOperator : IDisposable
     public EmployeeContextOperator()
     {
         employeeContext = new EmployeeContext();
+        employeeContext.Database.Migrate();
     }
 
     public int AddEmployees(IEnumerable<Employee> employees)

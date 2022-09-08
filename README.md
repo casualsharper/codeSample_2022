@@ -9,12 +9,4 @@ That said, here are some cut corners:
 5. I assumed case insensitive search.
 6. I did not know how you expected to reference csv file, drag and drop on executable to get file path or something else. Ended up simply hardcoding it.
 
-Before run make sure you have
-
-dotnet tool install --global dotnet-ef
-dotnet add package Microsoft.EntityFrameworkCore.Design
-
-and then run before app launch to create db
-
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+P.S. In VS Code integratedTerminal clears console in a weird way I suggest launching executible after build.
