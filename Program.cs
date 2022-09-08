@@ -8,6 +8,7 @@ namespace EvolutionTask;
 class Program
 {
     private const int MAX_HITS_TO_DISPLAY = 5;
+    
     static void Main(string[] args)
     {
         var sampleFilePath = Path.Combine(Utils.ExecutableBaseFolder, Consts.SAMPLE_FILE_NAME);
