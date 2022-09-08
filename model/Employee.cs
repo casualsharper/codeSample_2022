@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Text;
 using CsvHelper.Configuration.Attributes;
 
 namespace EvolutionTask.Model;
@@ -33,12 +32,7 @@ public class Employee
 
     public override string ToString()
     {
-        return GetType().GetProperties()
-                .Select(info => (info.Name, Value: info.GetValue(this, null) ?? "(null)"))
-                .Aggregate(
-                    new StringBuilder(),
-                    (sb, pair) => sb.AppendLine($"{pair.Name}: {pair.Value}"),
-                    sb => sb.ToString());
+        return Utils.ObjectPropertiesValuesToString(this);
     }
 
     private static string GetCompanyEmail(string firstName, string lastName)
