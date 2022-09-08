@@ -20,7 +20,10 @@ public class EmployeeContextOperator : IDisposable
     {
         var sanitizedData = SanitizeData(employees);
 
-        employeeContext.BulkMerge(sanitizedData);
+        employeeContext.BulkMerge(sanitizedData, options =>
+        {
+            options.MergeKeepIdentity = true;
+        });
 
         return sanitizedData.Count();
     }
