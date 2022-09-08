@@ -20,20 +20,20 @@ public class EmployeeContextOperator : IDisposable
     {
         var sanitizedData = SanitizeData(employees);
 
-        employeeContext.AddRange(sanitizedData);
-        employeeContext.SaveChanges();
+        employeeContext.BulkMerge(sanitizedData);
 
-        return sanitizedData.Count;
+        return sanitizedData.Count();
     }
 
     public IEnumerable<Employee> SearchEmployee(string searchString)
     {
-        return employeeContext.Employees.Where(w =>
-        w.CompanyEmail.Contains(searchString) ||
-        w.Email.Contains(searchString) ||
-        w.FirstName.Contains(searchString) ||
-        w.LastName.Contains(searchString)
-        ).ToList();
+        return employeeContext.Employees
+            .Where(w =>
+                w.CompanyEmail.Contains(searchString) ||
+                w.Email.Contains(searchString) ||
+                w.FirstName.Contains(searchString) ||
+                w.LastName.Contains(searchString))
+            .ToList();
     }
 
     public void Dispose()
@@ -55,7 +55,7 @@ public class EmployeeContextOperator : IDisposable
         }
     }
 
-    private List<Employee> SanitizeData(IEnumerable<Employee> employees)
+    private IEnumerable<Employee> SanitizeData(IEnumerable<Employee> employees)
     {
         return employees
         .GroupBy(g => g.EmployeeId)

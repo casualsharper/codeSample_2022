@@ -18,6 +18,8 @@ class Program
 
         InsertData(data, employeeContextOperator);
 
+        AwaitingNewCommandMessage();
+
         SearchRoutine(employeeContextOperator);
     }
 
@@ -25,30 +27,45 @@ class Program
     {
         var newEntries = employeeContextOperator.AddEmployees(data);
 
-        Console.WriteLine($"Employees added: {newEntries}");
+        Console.WriteLine($"Employees processed: {newEntries}");
     }
 
     private static void SearchRoutine(EmployeeContextOperator employeeContextOperator)
     {
         while (true)
         {
-            Console.WriteLine("Enter search criteria:");
+            Console.Clear();
+            Console.WriteLine("Enter search criteria for employee:");
 
             var searchCriteria = Console.ReadLine();
 
+            Console.Clear();
+
             if (string.IsNullOrEmpty(searchCriteria))
             {
-                Console.Clear();
                 continue;
             }
+
+            Console.WriteLine($"Search criteria: {searchCriteria}");
 
             var foundEmployees = employeeContextOperator.SearchEmployee(searchCriteria);
 
             DisplaySearchResults(foundEmployees);
 
-            Console.WriteLine("Press any key to continue");
-            Console.Read();
+            AwaitingNewCommandMessage();
         }
+    }
+
+    private static void AwaitingNewCommandMessage()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Press any enter to continue");
+        Console.ReadLine();
+    }
+
+    private static void ResetConsole()
+    {
+        Console.Clear();
     }
 
     private static void DisplaySearchResults(IEnumerable<Employee> foundEmployees)
@@ -66,9 +83,15 @@ class Program
             Console.WriteLine($"Shortening result list to {MAX_HITS_TO_DISPLAY} entries");
         }
 
-        foreach (var employee in foundEmployees)
+        Console.WriteLine();
+
+        var limitedResultList = foundEmployees
+            .Take(MAX_HITS_TO_DISPLAY)
+            .ToArray();
+
+        for (int i = 0; i < limitedResultList.Length; i++)
         {
-            Console.WriteLine($"{employee.CompanyEmail}");
+            Console.WriteLine($"{(i + 1)}. " + Environment.NewLine + limitedResultList[i]);
         }
     }
 }

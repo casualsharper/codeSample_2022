@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Text;
 using CsvHelper.Configuration.Attributes;
 
 namespace EvolutionTask.Model;
@@ -29,6 +30,16 @@ public class Employee
     private string? companyEmail;
     [Ignore]
     public string CompanyEmail { get { return companyEmail ?? GetCompanyEmail(FirstName, LastName); } set { companyEmail = value; } }
+
+    public override string ToString()
+    {
+        return GetType().GetProperties()
+                .Select(info => (info.Name, Value: info.GetValue(this, null) ?? "(null)"))
+                .Aggregate(
+                    new StringBuilder(),
+                    (sb, pair) => sb.AppendLine($"{pair.Name}: {pair.Value}"),
+                    sb => sb.ToString());
+    }
 
     private static string GetCompanyEmail(string firstName, string lastName)
     {
