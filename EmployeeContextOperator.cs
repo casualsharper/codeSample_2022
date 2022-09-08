@@ -18,7 +18,7 @@ public class EmployeeContextOperator : IDisposable
         employeeContext.Database.Migrate();
     }
 
-    public int AddEmployees(IEnumerable<Employee> employees)
+    public int ProcessEmployees(IEnumerable<Employee> employees)
     {
         var sanitizedData = SanitizeData(employees);
 

@@ -16,16 +16,16 @@ class Program
 
         using var employeeContextOperator = new EmployeeContextOperator();
 
-        InsertData(data, employeeContextOperator);
+        UpsertData(data, employeeContextOperator);
 
         AwaitingNewCommandMessage();
 
         SearchRoutine(employeeContextOperator);
     }
 
-    private static void InsertData(IEnumerable<Employee> data, EmployeeContextOperator employeeContextOperator)
+    private static void UpsertData(IEnumerable<Employee> data, EmployeeContextOperator employeeContextOperator)
     {
-        var newEntries = employeeContextOperator.AddEmployees(data);
+        var newEntries = employeeContextOperator.ProcessEmployees(data);
 
         Console.WriteLine($"Employees processed: {newEntries}");
     }
