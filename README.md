@@ -8,5 +8,6 @@ That said, here are some cut corners:
 4. Search is performed across all fields simulteniously, maybe you wanter a selector for search option by specific column.
 5. I assumed case insensitive search.
 6. I did not know how you expected to reference csv file, drag and drop on executable to get file path or something else. Ended up simply hardcoding it.
+7. In real app some of the Consts should be moved/stored in appsettings.json (or other config file) or database altogether.
 
 P.S. In VS Code integratedTerminal clears console in a weird way I suggest launching executible after build.
