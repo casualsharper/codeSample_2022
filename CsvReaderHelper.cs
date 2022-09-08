@@ -10,13 +10,13 @@ namespace EvolutionTask;
 
 public static class CsvReaderHelper
 {
+    private static readonly CsvConfiguration csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
+    {
+        Delimiter = ";"
+    };
+
     public static IEnumerable<Employee> ReadEmployeeFile(string filePath)
     {
-        var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
-        {
-            Delimiter = ";"
-        };
-
         using (var reader = new StreamReader(filePath))
         using (var csv = new CsvReader(reader, csvConfig))
         {
