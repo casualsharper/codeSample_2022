@@ -63,11 +63,6 @@ class Program
         Console.ReadLine();
     }
 
-    private static void ResetConsole()
-    {
-        Console.Clear();
-    }
-
     private static void DisplaySearchResults(IEnumerable<Employee> foundEmployees)
     {
         var totalEntries = foundEmployees.Count();
